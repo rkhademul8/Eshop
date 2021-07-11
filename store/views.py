@@ -19,3 +19,7 @@ def index(request):
     data['category']=category
          
     return render(request, 'index.html',data)
+
+
+def signup(request):
+    return render(request,'signup.html')
