@@ -7,39 +7,45 @@
     <div class="p-4 m-4">
         <div class="col-lg-5 mx-auto border rounded pt-4">
             <h3 class="alert alert-light border rounded">Create An Account</h3>
-            <form action="">
+            <form action="/signup" method="POST">
+              {% csrf_token %}
+              {% if error %}
+              <div class="alert alert-danger" role="alert">
+                {{error}}
+              </div>
+              {% endif %}
                 <!--  First Name -->
                 <div class="form-group">
                   <label for="">First Name:</label>
-                  <input type="text" name="email" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input type="text" name="f_name" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   
                 </div>
 
                 <!--  Last Name -->
                 <div class="form-group">
                     <label for="">Last Name:</label>
-                    <input type="text" name="text" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="l_name" id="" class="form-control" placeholder="" aria-describedby="helpId" required='true'>
                     
                   </div>
 
                    <!--  Contact Number -->
                 <div class="form-group">
                     <label for="">Contact:</label>
-                    <input type="text" name="text" id="" class="form-control" placeholder="01xxxxxxx" aria-describedby="helpId">
+                    <input type="text" name="numer" id="" class="form-control" placeholder="01xxxxxxx" aria-describedby="helpId" required='true'>
                     
                   </div>
 
                   <!--  Email -->
                 <div class="form-group">
                     <label for="">Email:</label>
-                    <input type="email" name="email" id="" class="form-control" placeholder="example@gmail.com" aria-describedby="helpId">
+                    <input type="email" name="email" id="" class="form-control" placeholder="example@gmail.com" aria-describedby="helpId" required='true'>
                     
                   </div>
 
                   <!--  Password -->
                 <div class="form-group">
                     <label for="">Password:</label>
-                    <input type="password" name="email" id="" class="form-control" placeholder="******" aria-describedby="helpId">
+                    <input type="password" name="password" id="" class="form-control" placeholder="******" aria-describedby="helpId" required='true'>
                     
                   </div>
   
