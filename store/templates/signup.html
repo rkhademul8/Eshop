@@ -6,7 +6,7 @@
 
     <div class="p-4 m-4">
         <div class="col-lg-5 mx-auto border rounded pt-4">
-            <h3 class="alert alert-light border rounded">Create An Account</h3>
+            <h3 class="alert alert-light border rounded" style="text-align: center;">Create An Account</h3>
             <form action="/signup" method="POST">
               {% csrf_token %}
               {% if error %}
@@ -17,28 +17,28 @@
                 <!--  First Name -->
                 <div class="form-group">
                   <label for="">First Name:</label>
-                  <input type="text" name="f_name" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input type="text" name="f_name" id="" value="{{values.first_name}}" class="form-control" placeholder="" aria-describedby="helpId" >
                   
                 </div>
 
                 <!--  Last Name -->
                 <div class="form-group">
                     <label for="">Last Name:</label>
-                    <input type="text" name="l_name" id="" class="form-control" placeholder="" aria-describedby="helpId" required='true'>
+                    <input type="text" name="l_name" id=""  value="{{values.last_name}}" class="form-control" placeholder="" aria-describedby="helpId" required='true'>
                     
                   </div>
 
                    <!--  Contact Number -->
                 <div class="form-group">
                     <label for="">Contact:</label>
-                    <input type="text" name="numer" id="" class="form-control" placeholder="01xxxxxxx" aria-describedby="helpId" required='true'>
+                    <input type="text" name="numer" id="" value="{{values.phone}}" class="form-control" placeholder="01xxxxxxx" aria-describedby="helpId" required='true'>
                     
                   </div>
 
                   <!--  Email -->
                 <div class="form-group">
                     <label for="">Email:</label>
-                    <input type="email" name="email" id="" class="form-control" placeholder="example@gmail.com" aria-describedby="helpId" required='true'>
+                    <input type="email" name="email" id="" value="{{values.email}}" class="form-control" placeholder="example@gmail.com" aria-describedby="helpId" required='true'>
                     
                   </div>
 
