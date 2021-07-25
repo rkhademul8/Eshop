@@ -13,6 +13,11 @@ class Customer(models.Model):
     
     def register(self):
         self.save()
+    
+    def isExits(self):
+        if Customer.objects.filter(email=self.email):
+            return True
+        return False
 
 class Category(models.Model):
     name=models.CharField(max_length=20, null=True, blank=True )
